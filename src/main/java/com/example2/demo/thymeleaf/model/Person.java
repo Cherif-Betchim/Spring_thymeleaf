@@ -1,5 +1,5 @@
 package com.example2.demo.thymeleaf.model;
-
+//c'est un model
 public class Person {
 
     private String firstName;

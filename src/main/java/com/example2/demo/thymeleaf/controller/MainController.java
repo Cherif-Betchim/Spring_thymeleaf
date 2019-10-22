@@ -1,5 +1,5 @@
 package com.example2.demo.thymeleaf.controller;
-
+//controller
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,7 +34,7 @@ public class MainController {
 
         model.addAttribute("message", message);
 
-        return "index";
+        return "index"; // i can use "index.html"
     }
 
     @RequestMapping(value = { "/personList" }, method = RequestMethod.GET)
@@ -42,7 +42,7 @@ public class MainController {
 
         model.addAttribute("persons", persons);
 
-        return "personList";
+        return "personList";  //return to template html o the same name i cant use .html
     }
 
     @RequestMapping(value = { "/addPerson" }, method = RequestMethod.GET)
@@ -51,7 +51,7 @@ public class MainController {
         PersonForm personForm = new PersonForm();
         model.addAttribute("personForm", personForm);
 
-        return "addPerson";
+        return "addPerson";   //return to template html o the same name i can put .html
     }
 
     @RequestMapping(value = { "/addPerson" }, method = RequestMethod.POST)
@@ -66,11 +66,11 @@ public class MainController {
             Person newPerson = new Person(firstName, lastName);
             persons.add(newPerson);
 
-            return "redirect:/personList";
+            return "redirect:/personList";   //return to template html o the same name
         }
 
         model.addAttribute("errorMessage", errorMessage);
-        return "addPerson";
+        return "addPerson";   //return to template html o the same name
     }
 
 }
